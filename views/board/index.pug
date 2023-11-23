@@ -1,0 +1,22 @@
+extends ../layout 
+
+block content 
+
+  h1 Message Board 
+  br
+  div 
+    each message in messages 
+      h3 >>> #{message.text}
+      if (user.membership_status === 'Member')
+        p sent by: #{message.sender.username} 
+      i= message.time
+
+  .message_form 
+    | Hello #{user.username}
+    include message_form
+    footer 
+      b Only Members can see who wrote the posts. 
+        a(href="/membership") Click here
+        |  to become a member 
+
+

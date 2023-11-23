@@ -1,0 +1,15 @@
+extends ../layout 
+
+block content 
+  form.form(action="", method="post") 
+    label(for="f_name") First Name: 
+    input#f_name(type="text", name="first_name", value = (undefined === user ? '' : user.first_name),required)
+    label(for="l_name") Last Name: 
+    input#l_name(type="text", name="last_name", value = (undefined === user ? '' : user.last_name))
+    label(for="username") Username: 
+    input#username(type="text", name="username", value = (undefined === user ? '' : user.username),required)
+    label(for="password") Password: 
+    input#password(type="password", name="password",required)
+    label(for="password_confirm") Confirm Password: 
+    input#password_confirm(type="password", name="password_confirm",required)
+    button(type="submit") Sign Up 
